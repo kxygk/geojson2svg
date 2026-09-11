@@ -1,7 +1,6 @@
-{:deps  {geoprim/geoprim
-         {:local/root "../geoprim"}
-         factual/geo  {:mvn/version
-                       "3.0.1"}
-         thi.ng/geom  {:mvn/version
-                       "1.0.1"}}
+{:deps  {io.github.kxygk/geoprim {:git/sha "a2eb857872803a1572be9391c9c73dd844247130"}
+         #_#_
+         geoprim/geoprim         {:local/root "../geoprim"}
+         factual/geo             {:mvn/version "3.0.1"}
+         thi.ng/geom             {:mvn/version "1.0.1"}}
  :paths ["."]}
