@@ -116,29 +116,28 @@
 ;; TODO: Make this properly recursive
 
 (defn
-  read-file
+  read-json-str
   "Read in a GeoJSON file
   crop it to a region
   return an SVG hiccup.
   DEFAULT: polygons drawn with a black contour
   Optionally provide `attribs` to override"
   ;;
-  ([geojson-file
+  ([geojson-str
     region]
    (let [attribs
          {:stroke-width "0.05px"
           :stroke       "black"}]
-   (read-file
-     geojson-file
+   (read-json-str
+     geojson-str
      region
      attribs)))
   ;;
-  ([geojson-file
+  ([geojson-str
     region
     attribs]
    (->
-     geojson-file
-     slurp
+     geojson-str
      geo.io/read-geojson
      (crop-to-region
        region)
